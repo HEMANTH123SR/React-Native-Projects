@@ -16,16 +16,16 @@ const App = () => {
       <View style={styles.container}>
         {PokemonDb.map(({name, type, powerMove, details, img}) => (
           <View style={[styles.pokemonCardContainer]}>
-            <Text>{name}</Text>
+            <Text style={styles.pokemonTitleName}>{name}</Text>
             <Image
               style={styles.pokemonImg}
               source={{
                 uri: img,
               }}
             />
-            <View>
-              <Text>{type}</Text>
-              <Text>{powerMove}</Text>
+            <View style={styles.pokemonDetailsConatiner}>
+              <Text style={styles.pokemonType}>{type}</Text>
+              <Text style={styles.pokemonPower}>{powerMove}</Text>
             </View>
           </View>
         ))}
@@ -46,8 +46,42 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   pokemonImg: {
+    marginTop: 10,
     width: 250,
     height: 250,
+  },
+  pokemonTitleName: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#000000',
+    position: 'absolute',
+    marginTop: 20,
+    marginLeft: 10,
+  },
+  pokemonType: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#000000',
+    backgroundColor: '#EEEDED',
+    width: 'auto',
+    padding: 8,
+    borderRadius: 30,
+  },
+  pokemonDetailsConatiner: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxHeight: 100,
+  },
+  pokemonPower: {
+    margin: 20,
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#000000',
+    backgroundColor: '#EEEDED',
+    width: 'auto',
+    padding: 8,
+    borderRadius: 30,
   },
 });
 
