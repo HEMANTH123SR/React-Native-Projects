@@ -8,7 +8,15 @@ import {
   ScrollView,
   StatusBar,
 } from 'react-native';
+// import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
+
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
+
 import {PokemonDb} from './PokemonDb';
+import {TouchableOpacity} from 'react-native';
 
 const App = () => {
   return (
@@ -30,6 +38,9 @@ const App = () => {
           </View>
         ))}
       </View>
+      <TouchableOpacity>
+        <Text style={styles.pokemonPower}>Click me</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
