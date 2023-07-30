@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import * as Yup from 'yup';
-
+     
 const passwordValid = Yup.object().shape({
   name: Yup.string().required(),
   email: Yup.string().email().required(),
